@@ -1,0 +1,12 @@
+services:
+  proxy:
+    image: nginx:latest
+    container_name: mi_proxy_nginx
+    ports:
+      - "127.0.0.1:443:443"
+      #- "127.0.0.1:80:80"  # 80:80 Conecta el puerto 80 de tu PC al 80 del contenedor - 127.0.0.1:80 Solo acepta conexiones que vengan de adentro de esta misma computadora
+    volumes:
+      - ./infra/nginx.conf:/etc/nginx/nginx.conf:ro
+    # :ro significa "read only", para que el contenedor no pueda borrar tu archivo
+    # Mapeamos TODA nuestra carpeta local de certs a la del contenedor
+      - ./infra/certs:/etc/nginx/certs:ro

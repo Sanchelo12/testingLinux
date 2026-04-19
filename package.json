@@ -1,0 +1,21 @@
+{
+	"name": "test1",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "node src/index.js",
+		"lint": "@biomejs/biome check --write"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.33.0",
+	"dependencies": {
+		"express": "5.2.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.12"
+	}
+}
